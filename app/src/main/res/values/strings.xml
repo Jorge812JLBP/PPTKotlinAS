@@ -1,6 +1,6 @@
 
 <resources>
-    <string name="app_name">DiceRoller</string>
+    <string name="app_name">Prog.Apps. Examen </string>
     <string name="tirar_label">Roll</string>
     <string name="contar_label">Roll</string>
     <string name="resetear_label">Roll</string>

@@ -698,7 +698,6 @@ id chronometer
 id clip_horizontal
 id clip_vertical
 id collapseActionView
-id contador_button
 id content
 id contentPanel
 id custom
@@ -793,7 +792,6 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
-id textView_contador
 id textView_resultado
 id textView_resultado2
 id time

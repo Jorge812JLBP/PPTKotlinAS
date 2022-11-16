@@ -34,8 +34,8 @@ class MainActivity : AppCompatActivity()
         setContentView(R.layout.activity_main)
         val rollButton:Button = findViewById(R.id.tirar_button)
         rollButton.setOnClickListener{TirarDado()}
-        val countButton:Button = findViewById(R.id.contador_button)
-        countButton.setOnClickListener{Contador()}
+        /*val countButton:Button = findViewById(R.id.contador_button)
+        countButton.setOnClickListener{Contador()}*/
         val resetearButton:Button = findViewById(R.id.resetear_button)
         resetearButton.setOnClickListener{Resetear()}
     }
@@ -44,11 +44,6 @@ class MainActivity : AppCompatActivity()
     {
         val randomInt= (1..3).random()
         val randomInt2= (1..3).random()
-        Toast.makeText(this, "button pressed", Toast.LENGTH_SHORT).show()
-        val resultText: TextView = findViewById(R.id.textView_resultado)
-        resultText.text= randomInt.toString()
-        val resultText2: TextView = findViewById(R.id.textView_resultado2)
-        resultText2.text= randomInt2.toString()
 
         val diceImage: ImageView= findViewById(R.id.dice_image)
         val drawableResource= when(randomInt)
@@ -59,6 +54,7 @@ class MainActivity : AppCompatActivity()
         }
         diceImage.setImageResource(drawableResource)
 
+
         val diceImage2: ImageView= findViewById(R.id.dice_image2)
         val drawableResource2= when(randomInt2)
         {
@@ -67,42 +63,34 @@ class MainActivity : AppCompatActivity()
             else -> R.drawable.tijera
         }
         diceImage2.setImageResource(drawableResource2)
-    }
 
-    private fun Contador()
-    {
-        val ban: TextView= findViewById(R.id.textView_contador)
-        ban.text=(ban.text.toString().toInt()+1).toString()
-        if(ban.text.toString().toInt()>3){
-            ban.text="3"
-        }
-        val diceImage: ImageView=findViewById(R.id.dice_image)
-        val drawableResource=when(ban.text.toString().toInt())
-        {
-            1 -> R.drawable.piedra
-            2 -> R.drawable.papel
-            else -> R.drawable.tijera
-        }
-        diceImage.setImageResource(drawableResource)
 
-        val diceImage2: ImageView=findViewById(R.id.dice_image2)
-        val drawableResource2=when(ban.text.toString().toInt())
+        if(randomInt==1 && randomInt2==1 ||randomInt==2 && randomInt2==2 ||randomInt==3 && randomInt2==3)
         {
-            1 -> R.drawable.piedra
-            2 -> R.drawable.papel
-            else -> R.drawable.tijera
+            val resultText2: TextView = findViewById(R.id.textView_resultado2)
+            resultText2.text= "Empate"
+            //Toast.makeText(this, "Empate", Toast.LENGTH_SHORT).show()
         }
-        diceImage2.setImageResource(drawableResource2)
+        else if(randomInt==1 && randomInt2==2 || randomInt==3 && randomInt2==1 || randomInt==2 && randomInt2==3 )
+        {
+            val resultText2: TextView = findViewById(R.id.textView_resultado2)
+            resultText2.text= "El jugador dos gana"
+            //Toast.makeText(this, "El jugador dos gana", Toast.LENGTH_SHORT).show()
+        }else
+        {
+            val resultText2: TextView = findViewById(R.id.textView_resultado2)
+            resultText2.text= "El jugador uno gana"
+            //Toast.makeText(this, "El jugador uno gana", Toast.LENGTH_SHORT).show()
+
+        }
+
 
 
     }
+
     
     private fun Resetear()
     {
-        val textViewContador: TextView=findViewById(R.id.textView_contador)
-        textViewContador.text=0.toString()
-        val resultText: TextView=findViewById(R.id.textView_resultado)
-        resultText.text=0.toString()
         val resultText2: TextView=findViewById(R.id.textView_resultado2)
         resultText2.text=0.toString()
         val diceImage: ImageView=findViewById(R.id.dice_image)

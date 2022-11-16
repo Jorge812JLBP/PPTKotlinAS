@@ -8,6 +8,7 @@
         android:orientation="vertical"
         android:layout_gravity="center_vertical"
         tools:context=".MainActivity">
+
     <TextView
         android:id="@+id/textView_resultado"
         android:layout_width="wrap_content"
@@ -16,21 +17,20 @@
         android:text="Piedra Papel o Tijera Game"
         android:textSize="30sp"/>
 
+    <TextView
+        android:id="@+id/textView_resultado2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Resultado"
+        android:textSize="30sp"/>
+
     <ImageView
             android:id="@+id/dice_image"
             android:layout_width="72dp"
             android:layout_height="87dp"
             android:layout_gravity="center_horizontal"
             tools:src="@drawable/empty_dice"/>
-
-    <TextView
-        android:id="@+id/textView_resultado2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text=""
-        android:textSize="30sp"/>
-
 
     <ImageView
             android:id="@+id/dice_image2"
@@ -44,28 +44,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:background="@color/colorAccent"
             android:text="Jugar" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:textSize="30sp"
-        android:text="0"
-        android:id="@+id/textView_contador"/>
-
-    <Button
-        android:id="@+id/contador_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Contador" />
 
     <Button
         android:id="@+id/resetear_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimary"
         android:text="Resetear" />
+
 
 </LinearLayout>
